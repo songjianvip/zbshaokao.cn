@@ -1,0 +1,91 @@
+/* CSS 自定义属性（变量） */
+:root {
+  /* 主色调 */
+  --primary-color: #ff6b35;
+  --primary-hover: #e55a2b;
+  --primary-light: rgba(255, 107, 53, 0.1);
+  --primary-light-2: rgba(255, 107, 53, 0.2);
+  
+  /* 渐变色 */
+  --gradient-primary: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+  --gradient-secondary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  
+  /* 文字颜色 */
+  --text-primary: #333;
+  --text-secondary: #666;
+  --text-light: rgba(255, 255, 255, 0.8);
+  --text-white: #fff;
+  
+  /* 背景色 */
+  --bg-primary: #fff;
+  --bg-secondary: #f8f9fa;
+  --bg-dark: #333;
+  
+  /* 边框和分割线 */
+  --border-light: rgba(255, 107, 53, 0.1);
+  --border-white: rgba(255, 255, 255, 0.1);
+  
+  /* 阴影 */
+  --shadow-light: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --shadow-navbar: 0 2px 20px rgba(0, 0, 0, 0.1);
+  
+  /* 字体 */
+  --font-family: 'Microsoft YaHei', 'Helvetica Neue', Arial, sans-serif;
+  
+  /* 字体大小 */
+  --font-size-xs: 0.8rem;
+  --font-size-sm: 1rem;
+  --font-size-md: 1.1rem;
+  --font-size-lg: 1.3rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  --font-size-3xl: 2.5rem;
+  --font-size-4xl: 3rem;
+  --font-size-5xl: 3.5rem;
+  
+  /* 间距 */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+  --spacing-3xl: 5rem;
+  
+  /* 圆角 */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-xl: 15px;
+  --border-radius-full: 50%;
+  --border-radius-pill: 25px;
+  
+  /* 过渡动画 */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  
+  /* 容器最大宽度 */
+  --container-max-width: 1200px;
+  
+  /* 导航栏高度 */
+  --navbar-height: 70px;
+  
+  /* 响应式断点 */
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+}
+
+/* 深色模式支持（预留） */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-primary: #f0f0f0;
+    --text-secondary: #ccc;
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2a2a2a;
+    --bg-dark: #000;
+  }
+}

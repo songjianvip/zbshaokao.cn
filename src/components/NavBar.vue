@@ -27,11 +27,11 @@
   </nav>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
 
-const isScrolled = ref(false)
-const isMenuOpen = ref(false)
+const isScrolled = ref<boolean>(false)
+const isMenuOpen = ref<boolean>(false)
 
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 50
@@ -63,23 +63,23 @@ onUnmounted(() => {
   z-index: 1000;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
-  border-bottom: 1px solid rgba(255, 107, 53, 0.1);
+  transition: var(--transition-normal);
+  border-bottom: 1px solid var(--border-light);
 }
 
 .navbar.scrolled {
   background: rgba(255, 255, 255, 0.98);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-navbar);
 }
 
 .nav-container {
-  max-width: 1200px;
+  max-width: var(--container-max-width);
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 var(--spacing-md);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 70px;
+  height: var(--navbar-height);
 }
 
 /* Logo样式 */
@@ -92,19 +92,19 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: #333;
+  color: var(--text-primary);
   font-weight: bold;
-  font-size: 1.5rem;
-  transition: color 0.3s ease;
+  font-size: var(--font-size-xl);
+  transition: var(--transition-normal);
 }
 
 .logo-link:hover {
-  color: #ff6b35;
+  color: var(--primary-color);
 }
 
 .logo-icon {
-  font-size: 2rem;
-  margin-right: 0.5rem;
+  font-size: var(--font-size-2xl);
+  margin-right: var(--spacing-xs);
 }
 
 .logo-text {
@@ -115,27 +115,27 @@ onUnmounted(() => {
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: var(--spacing-lg);
 }
 
 .nav-link {
   text-decoration: none;
-  color: #333;
+  color: var(--text-primary);
   font-weight: 500;
-  padding: 0.5rem 1rem;
+  padding: var(--spacing-xs) var(--spacing-md);
   border-radius: 25px;
-  transition: all 0.3s ease;
+  transition: var(--transition-normal);
   position: relative;
 }
 
 .nav-link:hover {
-  color: #ff6b35;
-  background: rgba(255, 107, 53, 0.1);
+  color: var(--primary-color);
+  background: var(--primary-light);
 }
 
 .nav-link.router-link-active {
-  color: #ff6b35;
-  background: rgba(255, 107, 53, 0.1);
+  color: var(--primary-color);
+  background: var(--primary-light);
 }
 
 /* 移动端菜单按钮 */
@@ -149,9 +149,9 @@ onUnmounted(() => {
 .bar {
   width: 25px;
   height: 3px;
-  background: #333;
+  background: var(--text-primary);
   margin: 3px 0;
-  transition: 0.3s;
+  transition: var(--transition-normal);
   border-radius: 2px;
 }
 
@@ -163,17 +163,17 @@ onUnmounted(() => {
 
   .nav-menu {
     position: fixed;
-    top: 70px;
+    top: var(--navbar-height);
     left: -100%;
     width: 100%;
-    height: calc(100vh - 70px);
+    height: calc(100vh - var(--navbar-height));
     background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(10px);
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding-top: 2rem;
-    transition: left 0.3s ease;
+    padding-top: var(--spacing-lg);
+    transition: var(--transition-normal);
   }
 
   .nav-menu.active {
@@ -181,11 +181,11 @@ onUnmounted(() => {
   }
 
   .nav-link {
-    font-size: 1.2rem;
-    padding: 1rem 2rem;
+    font-size: var(--font-size-lg);
+    padding: var(--spacing-md) var(--spacing-lg);
     width: 200px;
     text-align: center;
-    margin: 0.5rem 0;
+    margin: var(--spacing-xs) 0;
   }
 
   /* 汉堡菜单动画 */

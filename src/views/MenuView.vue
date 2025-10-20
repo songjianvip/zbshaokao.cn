@@ -36,12 +36,13 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, computed } from 'vue'
+import type { MenuItem, Category } from '@/types'
 
-const activeCategory = ref('all')
+const activeCategory = ref<string>('all')
 
-const categories = [
+const categories: Category[] = [
   { id: 'all', name: '全部' },
   { id: 'meat', name: '肉类' },
   { id: 'vegetable', name: '蔬菜' },
@@ -49,7 +50,7 @@ const categories = [
   { id: 'special', name: '特色' }
 ]
 
-const menuItems = [
+const menuItems: MenuItem[] = [
   {
     id: 1,
     name: '五花肉',
@@ -124,7 +125,7 @@ const menuItems = [
   }
 ]
 
-const filteredItems = computed(() => {
+const filteredItems = computed<MenuItem[]>(() => {
   if (activeCategory.value === 'all') {
     return menuItems
   }

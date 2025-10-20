@@ -89,7 +89,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 // 这里可以添加组件逻辑
 </script>
 
