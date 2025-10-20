@@ -1,42 +1,32 @@
-# .
+# 淄博烧烤网 🔥
 
-This template should help get you started developing with Vue 3 in Vite.
+> 灵魂烧烤，人间烟火 - 体验正宗淄博烧烤文化的现代化网站
 
-## Recommended IDE Setup
+一个展示淄博烧烤文化和美食的响应式网站，采用现代化的Vue 3 + TypeScript技术栈构建。
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## ✨ 功能特色
 
-## Recommended Browser Setup
+### 🏠 首页展示
+- **英雄区域**：震撼的视觉效果展示淄博烧烤魅力
+- **特色介绍**：炭火烧烤、小饼卷肉、人文关怀三大特色
+- **人气推荐**：五花肉、羊肉串、烤韭菜、烤茄子等招牌美食
+- **文化故事**：深度挖掘淄博烧烤的历史文化底蕴
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+### 🍖 菜品展示
+- **分类筛选**：肉类、蔬菜、海鲜、特色等多种分类
+- **详细信息**：每道菜品的价格、描述和精美图片
+- **动态交互**：流畅的分类切换和菜品展示动画
 
-## Type Support for `.vue` Imports in TS
+### 🏛️ 文化传承
+- **工艺展示**：传统烧烤工艺的详细介绍
+- **文化特色**：淄博烧烤独特的文化内涵
+- **故事分享**：关于淄博烧烤的动人故事
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+### 📱 用户体验
+- **响应式设计**：完美适配桌面端、平板和移动设备
+- **流畅动画**：精心设计的页面过渡和交互动效
+- **现代UI**：简洁美观的界面设计，突出美食视觉效果
+- **快速加载**：优化的资源加载，提供流畅的浏览体验
 
-## Customize configuration
 
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
+**让我们一起品味淄博烧烤的独特魅力！** 🍢
