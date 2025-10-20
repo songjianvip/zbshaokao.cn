@@ -106,7 +106,6 @@ h4 {
 /* 段落样式 */
 p {
   margin-bottom: var(--spacing-sm);
-  color: var(--text-secondary);
 }
 
 /* 列表样式 */
@@ -208,15 +207,15 @@ ul, ol {
   .container {
     padding: 0 var(--spacing-sm);
   }
-  
+
   h1 {
     font-size: var(--font-size-3xl);
   }
-  
+
   h2 {
     font-size: var(--font-size-2xl);
   }
-  
+
   h3 {
     font-size: var(--font-size-xl);
   }
