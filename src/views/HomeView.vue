@@ -2,18 +2,79 @@
   <div class="home">
     <!-- 英雄区域 -->
     <section class="hero">
-      <div class="hero-content">
-        <h1 class="hero-title">淄博烧烤</h1>
-        <p class="hero-subtitle">灵魂烧烤，人间烟火</p>
-        <p class="hero-description">在这里，每一串烧烤都承载着淄博人的热情与匠心</p>
-        <div class="hero-actions">
-          <button class="btn-primary">探索美味</button>
-          <button class="btn-secondary">了解文化</button>
+      <div class="hero-background">
+        <div class="hero-pattern"></div>
+        <div class="hero-glow"></div>
+      </div>
+      
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="badge-icon">🔥</span>
+            <span class="badge-text">正宗淄博味道</span>
+          </div>
+          
+          <h1 class="hero-title">
+            <span class="title-main">淄博烧烤</span>
+            <span class="title-accent">灵魂烧烤，人间烟火</span>
+          </h1>
+          
+          <p class="hero-description">
+            在这里，每一串烧烤都承载着淄博人的热情与匠心，
+            <br>传承千年的烧烤文化在炭火中绽放新的生命力
+          </p>
+          
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">1000+</span>
+              <span class="stat-label">每日服务</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">50+</span>
+              <span class="stat-label">特色品种</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">20年</span>
+              <span class="stat-label">匠心传承</span>
+            </div>
+          </div>
+          
+          <div class="hero-actions">
+            <button class="btn btn-primary" @click="navigateToMenu">
+              <span class="btn-text">立即品尝</span>
+              <span class="btn-icon">🍢</span>
+            </button>
+            <button class="btn btn-secondary" @click="navigateToCulture">
+              <span class="btn-text">文化故事</span>
+              <span class="btn-icon">📖</span>
+            </button>
+          </div>
+        </div>
+        
+        <div class="hero-visual">
+          <div class="visual-main">
+            <div class="bbq-scene">
+              <div class="bbq-grill">🔥</div>
+              <div class="bbq-smoke"></div>
+              <div class="bbq-items">
+                <span class="bbq-item">🍢</span>
+                <span class="bbq-item">🥩</span>
+                <span class="bbq-item">🌶️</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="visual-decorations">
+            <div class="decoration-circle decoration-1"></div>
+            <div class="decoration-circle decoration-2"></div>
+            <div class="decoration-circle decoration-3"></div>
+          </div>
         </div>
       </div>
-      <div class="hero-image">
-        <!-- 这里可以放置烧烤图片 -->
-        <div class="placeholder-image">🍢</div>
+      
+      <div class="hero-scroll-indicator">
+        <div class="scroll-arrow">↓</div>
+        <span class="scroll-text">探索更多</span>
       </div>
     </section>
 
@@ -78,7 +139,10 @@
             <h2>淄博烧烤的文化故事</h2>
             <p>淄博烧烤不仅仅是一种美食，更是一种文化的传承。从街头巷尾的小摊到现代化的烧烤店，每一处都承载着淄博人对美食的执着和对生活的热爱。</p>
             <p>这里的烧烤师傅们用心烤制每一串食材，用热情服务每一位客人，让远道而来的朋友们都能感受到淄博的温暖和真诚。</p>
-            <button class="btn-outline">了解更多</button>
+            <button class="btn btn-outline" @click="navigateToCulture">
+              <span class="btn-text">了解更多</span>
+              <span class="btn-icon">📖</span>
+            </button>
           </div>
           <div class="culture-image">
             <div class="placeholder-image">🏮</div>
@@ -90,266 +154,21 @@
 </template>
 
 <script setup lang="ts">
-// 这里可以添加组件逻辑
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
+// 导航到菜单页面
+const navigateToMenu = () => {
+  router.push('/menu')
+}
+
+// 导航到文化页面
+const navigateToCulture = () => {
+  router.push('/culture')
+}
 </script>
 
 <style scoped>
-.home {
-  min-height: 100vh;
-}
-
-/* 英雄区域样式 */
-.hero {
-  display: flex;
-  align-items: center;
-  min-height: 100vh;
-  padding: 0 5%;
-  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
-  color: white;
-}
-
-.hero-content {
-  flex: 1;
-  max-width: 600px;
-}
-
-.hero-title {
-  font-size: 4rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-}
-
-.hero-subtitle {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  opacity: 0.9;
-}
-
-.hero-description {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-  line-height: 1.6;
-  opacity: 0.8;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 1rem;
-}
-
-.btn-primary, .btn-secondary {
-  padding: 12px 24px;
-  border: none;
-  border-radius: 25px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.btn-primary {
-  background: white;
-  color: #ff6b35;
-  font-weight: bold;
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-.btn-secondary {
-  background: transparent;
-  color: white;
-  border: 2px solid white;
-}
-
-.btn-secondary:hover {
-  background: white;
-  color: #ff6b35;
-}
-
-.hero-image {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.placeholder-image {
-  font-size: 15rem;
-  opacity: 0.8;
-}
-
-/* 通用容器 */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* 章节标题 */
-.section-title {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  color: #333;
-  font-weight: bold;
-}
-
-/* 特色介绍样式 */
-.features {
-  padding: 80px 0;
-  background: #f8f9fa;
-}
-
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-}
-
-.feature-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 15px;
-  text-align: center;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-.feature-card:hover {
-  transform: translateY(-5px);
-}
-
-.feature-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.feature-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: #333;
-}
-
-.feature-card p {
-  color: #666;
-  line-height: 1.6;
-}
-
-/* 热门推荐样式 */
-.popular {
-  padding: 80px 0;
-}
-
-.popular-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-}
-
-.popular-item {
-  text-align: center;
-  padding: 1.5rem;
-  border-radius: 15px;
-  transition: transform 0.3s ease;
-}
-
-.popular-item:hover {
-  transform: scale(1.05);
-}
-
-.item-image {
-  font-size: 4rem;
-  margin-bottom: 1rem;
-}
-
-.popular-item h4 {
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
-  color: #333;
-}
-
-.popular-item p {
-  color: #666;
-}
-
-/* 文化故事样式 */
-.culture {
-  padding: 80px 0;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-}
-
-.culture-content {
-  display: flex;
-  align-items: center;
-  gap: 3rem;
-}
-
-.culture-text {
-  flex: 1;
-}
-
-.culture-text h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-}
-
-.culture-text p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
-  opacity: 0.9;
-}
-
-.btn-outline {
-  padding: 12px 24px;
-  background: transparent;
-  color: white;
-  border: 2px solid white;
-  border-radius: 25px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.btn-outline:hover {
-  background: white;
-  color: #667eea;
-}
-
-.culture-image {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* 响应式设计 */
-@media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
-    padding: 2rem;
-  }
-  
-  .hero-title {
-    font-size: 2.5rem;
-  }
-  
-  .hero-actions {
-    justify-content: center;
-  }
-  
-  .culture-content {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .placeholder-image {
-    font-size: 8rem;
-  }
-}
+@import '../assets/styles/components/home.css';
 </style>

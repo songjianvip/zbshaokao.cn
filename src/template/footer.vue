@@ -26,6 +26,7 @@
             <li><router-link to="/">首页</router-link></li>
             <li><router-link to="/menu">菜单</router-link></li>
             <li><router-link to="/culture">文化</router-link></li>
+            <li><a href="#contact">联系我们</a></li>
           </ul>
         </div>
 
@@ -39,31 +40,6 @@
             <li><a href="#">小饼卷肉</a></li>
           </ul>
         </div>
-
-        <!-- 联系信息 -->
-        <div class="footer-section">
-          <h3>联系我们</h3>
-          <div class="contact-info">
-            <div class="contact-item">
-              <span class="contact-icon">📍</span>
-              <span>山东省淄博市</span>
-            </div>
-            <div class="contact-item">
-              <span class="contact-icon">📞</span>
-              <span>400-123-4567</span>
-            </div>
-            <div class="contact-item">
-              <span class="contact-icon">⏰</span>
-              <span>营业时间：17:00-24:00</span>
-            </div>
-            <div class="contact-item">
-              <span class="contact-icon">✉️</span>
-              <span>info@zbshaokao.com</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <!-- 版权信息 -->
       <div class="footer-bottom">
         <div class="copyright">
