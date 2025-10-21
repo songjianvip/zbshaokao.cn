@@ -17,7 +17,7 @@
 .copyright-text {
   font-size: var(--font-size-sm);
   margin: 0 0 var(--spacing-xs) 0;
-  opacity: 0.9;
+  opacity: 1;
   font-weight: 500;
 }
 

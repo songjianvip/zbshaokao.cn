@@ -2,66 +2,8 @@
   <footer class="footer" id="contact">
     <div class="container">
       <div class="footer-content">
-        <!-- 品牌信息 -->
-        <div class="footer-section">
-          <div class="footer-logo">
-            <span class="logo-icon">🍢</span>
-            <span class="logo-text">淄博烧烤</span>
-          </div>
-          <p class="footer-description">
-            传承经典，创新未来<br>
-            让每一串烧烤都承载着淄博人的热情与匠心
-          </p>
-          <div class="social-links">
-            <a href="#" class="social-link">📱</a>
-            <a href="#" class="social-link">📧</a>
-            <a href="#" class="social-link">🌐</a>
-          </div>
-        </div>
 
-        <!-- 快速链接 -->
-        <div class="footer-section">
-          <h3>快速链接</h3>
-          <ul class="footer-links">
-            <li><router-link to="/">首页</router-link></li>
-            <li><router-link to="/menu">菜单</router-link></li>
-            <li><router-link to="/culture">文化</router-link></li>
-          </ul>
-        </div>
 
-        <!-- 特色菜品 -->
-        <div class="footer-section">
-          <h3>特色推荐</h3>
-          <ul class="footer-links">
-            <li><a href="#">五花肉</a></li>
-            <li><a href="#">羊肉串</a></li>
-            <li><a href="#">烤韭菜</a></li>
-            <li><a href="#">小饼卷肉</a></li>
-          </ul>
-        </div>
-
-        <!-- 联系信息 -->
-        <div class="footer-section">
-          <h3>联系我们</h3>
-          <div class="contact-info">
-            <div class="contact-item">
-              <span class="contact-icon">📍</span>
-              <span>山东省淄博市</span>
-            </div>
-            <div class="contact-item">
-              <span class="contact-icon">📞</span>
-              <span>400-123-4567</span>
-            </div>
-            <div class="contact-item">
-              <span class="contact-icon">⏰</span>
-              <span>营业时间：17:00-24:00</span>
-            </div>
-            <div class="contact-item">
-              <span class="contact-icon">✉️</span>
-              <span>info@zbshaokao.com</span>
-            </div>
-          </div>
-        </div>
       </div>
 
       <!-- 版权信息 -->
@@ -82,20 +24,20 @@
 .footer {
   background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
   color: white;
-  padding: 60px 0 20px;
+  padding: 0 0 0 0;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 0 2rem 0;
 }
 
 .footer-content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 3rem;
-  margin-bottom: 3rem;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .footer-section h3 {
@@ -121,7 +63,7 @@
 .footer-description {
   line-height: 1.6;
   margin-bottom: 1.5rem;
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
 .social-links {
@@ -157,7 +99,7 @@
 }
 
 .footer-links a {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.95);
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -176,6 +118,7 @@
   display: flex;
   align-items: center;
   gap: 0.8rem;
+  color: rgba(255, 255, 255, 0.95);
 }
 
 .contact-icon {
@@ -186,13 +129,13 @@
 
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 2rem;
+  padding-top: 1rem;
   text-align: center;
 }
 
 .copyright p {
   margin: 0.5rem 0;
-  opacity: 0.7;
+  opacity: 0.9;
 }
 
 .copyright p:last-child {
