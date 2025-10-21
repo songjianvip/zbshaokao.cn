@@ -1,0 +1,498 @@
+<template>
+  <section class="hero">
+    <div class="hero-background">
+      <div class="hero-pattern"></div>
+      <div class="hero-glow"></div>
+    </div>
+    
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-icon">🔥</span>
+          <span class="badge-text">正宗淄博味道</span>
+        </div>
+        
+        <h1 class="hero-title">
+          <span class="title-main">淄博烧烤</span>
+          <span class="title-accent">灵魂烧烤，人间烟火</span>
+        </h1>
+        
+        <p class="hero-description">
+          在这里，每一串烧烤都承载着淄博人的热情与匠心，
+          <br>传承千年的烧烤文化在炭火中绽放新的生命力
+        </p>
+        
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">1000+</span>
+            <span class="stat-label">每日服务</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">50+</span>
+            <span class="stat-label">特色品种</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">20年</span>
+            <span class="stat-label">匠心传承</span>
+          </div>
+        </div>
+        
+        <div class="hero-actions">
+          <button class="btn btn-primary" @click="navigateToMenu">
+            <span class="btn-text">立即品尝</span>
+            <span class="btn-icon">🍢</span>
+          </button>
+          <button class="btn btn-secondary" @click="navigateToCulture">
+            <span class="btn-text">文化故事</span>
+            <span class="btn-icon">📖</span>
+          </button>
+        </div>
+      </div>
+      
+      <div class="hero-visual">
+        <div class="visual-main">
+          <div class="bbq-scene">
+            <div class="bbq-grill">🔥</div>
+            <div class="bbq-smoke"></div>
+            <div class="bbq-items">
+              <span class="bbq-item">🍢</span>
+              <span class="bbq-item">🥩</span>
+              <span class="bbq-item">🌶️</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="visual-decorations">
+          <div class="decoration-circle decoration-1"></div>
+          <div class="decoration-circle decoration-2"></div>
+          <div class="decoration-circle decoration-3"></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="hero-scroll-indicator">
+      <div class="scroll-arrow">↓</div>
+      <span class="scroll-text">探索更多</span>
+    </div>
+  </section>
+</template>
+
+<script setup lang="ts">
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
+// 导航到菜单页面
+const navigateToMenu = () => {
+  router.push('/menu')
+}
+
+// 导航到文化页面
+const navigateToCulture = () => {
+  router.push('/culture')
+}
+</script>
+
+<style scoped>
+@import '../assets/styles/common.css';
+
+/* 英雄区域样式 */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: white;
+}
+
+/* 背景层 */
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ff4500 0%, #ff6b35 25%, #ff8c42 50%, #ffa500 75%, #ff7f00 100%);
+  z-index: 1;
+}
+
+.hero-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 2px, transparent 2px),
+    radial-gradient(circle at 75% 75%, rgba(255,255,255,0.08) 1px, transparent 1px),
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,0.05) 3px, transparent 3px);
+  background-size: 60px 60px, 40px 40px, 80px 80px;
+  animation: patternMove 30s linear infinite;
+}
+
+.hero-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  animation: glow 8s ease-in-out infinite alternate;
+}
+
+@keyframes patternMove {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(60px, 60px); }
+}
+
+@keyframes glow {
+  0% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
+  100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.2); }
+}
+
+/* 主容器 */
+.hero-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 8rem;
+  align-items: center;
+  min-height: 80vh;
+}
+
+/* 内容区域 */
+.hero-content {
+  animation: slideInLeft 1s ease-out;
+}
+
+/* 徽章 */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 50px;
+  padding: 12px 24px;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.badge-icon {
+  font-size: 1.1rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.badge-text {
+  color: rgba(255,255,255,0.95);
+}
+
+/* 标题 */
+.hero-title {
+  margin-bottom: 2rem;
+  animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.title-main {
+  display: block;
+  font-size: 5.5rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #fff 0%, #ffe4d6 50%, #fff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  letter-spacing: -2px;
+}
+
+.title-accent {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 300;
+  opacity: 0.9;
+  letter-spacing: 2px;
+  margin-top: 0.5rem;
+}
+
+/* 描述 */
+.hero-description {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+  opacity: 0.9;
+  max-width: 500px;
+  animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+/* 统计数据 */
+.hero-stats {
+  display: flex;
+  gap: 3rem;
+  margin-bottom: 3rem;
+  animation: fadeInUp 1s ease-out 0.8s both;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+/* 按钮区域 */
+.hero-actions {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  align-items: center;
+  animation: fadeInUp 1s ease-out 1s both;
+}
+
+/* 视觉区域 */
+.hero-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: slideInRight 1s ease-out 0.5s both;
+}
+
+.visual-main {
+  position: relative;
+  z-index: 3;
+}
+
+.bbq-scene {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.bbq-grill {
+  font-size: 8rem;
+  animation: flicker 2s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 30px rgba(255,69,0,0.8));
+}
+
+.bbq-smoke {
+  position: absolute;
+  top: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 6rem;
+  background: linear-gradient(to top, rgba(255,255,255,0.6), transparent);
+  border-radius: 2px;
+  animation: smoke 3s ease-in-out infinite;
+}
+
+.bbq-items {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.bbq-item {
+  font-size: 3rem;
+  animation: bounce 2s ease-in-out infinite;
+  filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+}
+
+.bbq-item:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.bbq-item:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+/* 装饰元素 */
+.visual-decorations {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.decoration-circle {
+  position: absolute;
+  border: 2px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+  animation: rotate 20s linear infinite;
+}
+
+.decoration-1 {
+  width: 200px;
+  height: 200px;
+  top: 10%;
+  right: 10%;
+  animation-duration: 25s;
+}
+
+.decoration-2 {
+  width: 120px;
+  height: 120px;
+  bottom: 20%;
+  left: 10%;
+  animation-duration: 30s;
+  animation-direction: reverse;
+}
+
+.decoration-3 {
+  width: 80px;
+  height: 80px;
+  top: 60%;
+  right: 30%;
+  animation-duration: 15s;
+}
+
+/* 滚动指示器 */
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 3;
+  animation: fadeInUp 1s ease-out 1.5s both;
+}
+
+.scroll-arrow {
+  font-size: 1.5rem;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.scroll-text {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  letter-spacing: 1px;
+}
+
+/* 响应式设计 */
+@media (max-width: 1200px) {
+  .hero-container {
+    gap: 4rem;
+    padding: 0 2rem;
+  }
+  
+  .title-main {
+    font-size: 4.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+    padding: 0 1rem;
+  }
+  
+  .title-main {
+    font-size: 3.5rem;
+  }
+  
+  .title-accent {
+    font-size: 1.4rem;
+  }
+  
+  .hero-description {
+    font-size: 1.1rem;
+  }
+  
+  .hero-stats {
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .bbq-grill {
+    font-size: 6rem;
+  }
+  
+  .bbq-item {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-container {
+    padding: 0 0.75rem;
+  }
+  
+  .title-main {
+    font-size: 2.8rem;
+    letter-spacing: -1px;
+  }
+  
+  .title-accent {
+    font-size: 1.2rem;
+  }
+  
+  .hero-description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-stats {
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .stat-number {
+    font-size: 1.8rem;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+  
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .bbq-grill {
+    font-size: 4rem;
+  }
+  
+  .bbq-item {
+    font-size: 2rem;
+  }
+}
+</style>
