@@ -1,0 +1,7 @@
+/* HomeView页面样式 */
+
+/* 首页主要内容区域 */
+.home {
+  min-height: 100vh;
+  background: #fafafa;
+}

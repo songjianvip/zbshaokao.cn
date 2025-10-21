@@ -29,6 +29,13 @@ body {
   padding: 0 var(--spacing-md);
 }
 
+@media (max-width: 1200px) {
+  .container {
+    max-width: 960px;
+    padding: 0 1.5rem;
+  }
+}
+
 /* 链接样式 */
 a {
   color: inherit;

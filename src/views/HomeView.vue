@@ -23,10 +23,5 @@ import CultureStory from '@/components/CultureStory.vue'
 
 <style scoped>
 @import '../assets/styles/common.css';
-
-/* 首页主要内容区域 */
-.home {
-  min-height: 100vh;
-  background: #fafafa;
-}
+@import '../assets/styles/views/home.css';
 </style>
