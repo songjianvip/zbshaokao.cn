@@ -3,6 +3,9 @@
     <!-- 英雄区域 -->
     <HeroSection />
 
+    <!-- 烧烤特色 -->
+    <BBQSpecialties />
+
     <!-- 特色介绍 -->
     <SpecialFeatures />
 
@@ -16,6 +19,7 @@
 
 <script setup lang="ts">
 import HeroSection from '@/components/HeroSection.vue'
+import BBQSpecialties from '@/components/BBQSpecialties.vue'
 import SpecialFeatures from '@/components/SpecialFeatures.vue'
 import HotRecommendations from '@/components/HotRecommendations.vue'
 import CultureStory from '@/components/CultureStory.vue'
