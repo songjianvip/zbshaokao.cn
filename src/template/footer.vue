@@ -1,11 +1,6 @@
 <template>
   <footer class="footer" id="contact">
     <div class="container">
-      <div class="footer-content">
-
-
-      </div>
-
       <!-- 版权信息 -->
       <div class="footer-bottom">
         <div class="copyright">
@@ -33,10 +28,12 @@ defineOptions({
 })
 
 onMounted(() => {
+  if (!import.meta.env.PROD) return
   if (!window._hmt) {
     window._hmt = window._hmt || [];
     (function() {
       const hm = document.createElement("script");
+      hm.async = true
       hm.src = "https://hm.baidu.com/hm.js?539b938b181b25c7433faa80d8a1b579";
       const firstScript = document.getElementsByTagName("script")[0];
       if (firstScript?.parentNode) {

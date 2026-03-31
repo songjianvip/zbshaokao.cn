@@ -16,6 +16,7 @@ import Footer from './template/footer.vue'
 <style>
 /* 导入全局样式 */
 @import './assets/styles/global.css';
+@import './assets/styles/common.css';
 /* 导入组件样式 */
 @import './assets/styles/components/app.css';
 </style>

@@ -106,6 +106,5 @@ const tickerNews = computed(() => (sortedNews.value.length ? [...sortedNews.valu
 </script>
 
 <style scoped>
-@import '../assets/styles/common.css';
 @import '../assets/styles/views/home.css';
 </style>

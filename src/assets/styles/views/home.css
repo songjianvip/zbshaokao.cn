@@ -33,6 +33,7 @@
 
 .home-news {
   padding: 5.5rem 0 6rem;
+  scroll-margin-top: calc(var(--navbar-height) + 12px);
 }
 
 .news-header {

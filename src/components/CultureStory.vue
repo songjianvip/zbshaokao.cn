@@ -58,6 +58,5 @@ const navigateToCulture = () => {
 </script>
 
 <style scoped>
-@import '../assets/styles/common.css';
 @import '../assets/styles/components/culture-story.css';
 </style>

@@ -50,6 +50,5 @@ const popularItems = ref([
 </script>
 
 <style scoped>
-@import '../assets/styles/common.css';
 @import '../assets/styles/components/hot-recommendations.css';
 </style>

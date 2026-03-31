@@ -28,6 +28,5 @@
 </script>
 
 <style scoped>
-@import '../assets/styles/common.css';
 @import '../assets/styles/components/special-features.css';
 </style>

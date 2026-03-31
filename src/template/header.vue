@@ -18,7 +18,7 @@
       </div>
 
       <!-- 移动端菜单按钮 -->
-      <div class="nav-toggle" @click="toggleMenu">
+      <div class="nav-toggle" :class="{ active: isMenuOpen }" @click="toggleMenu">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>

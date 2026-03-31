@@ -4,15 +4,19 @@ import HomeView from '../views/HomeView.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   scrollBehavior(to) {
+    const reducedMotion =
+      typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const behavior = reducedMotion ? 'auto' : 'smooth'
+
     if (to.hash) {
       return {
         el: to.hash,
-        behavior: 'smooth'
+        behavior
       }
     }
     return {
       top: 0,
-      behavior: 'smooth'
+      behavior
     }
   },
   routes: [

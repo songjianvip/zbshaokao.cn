@@ -1,5 +1,5 @@
 <template>
-  <section class="bbq-specialties">
+  <section class="bbq-specialties" :class="{ 'is-mounted': isMounted }">
     <div class="container">
       <div class="section-header">
         <h2 class="section-title">淄博烧烤三大灵魂秘技</h2>
@@ -115,22 +115,16 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 
-// 组件挂载后的动画效果
+const isMounted = ref(false)
+
 onMounted(() => {
-  const cards = document.querySelectorAll('.specialty-card')
-  cards.forEach((card, index) => {
-    setTimeout(() => {
-      card.classList.add('animate-in')
-    }, index * 200)
-  })
+  isMounted.value = true
 })
 </script>
 
 <style scoped>
-@import '../assets/styles/common.css';
-
 .bbq-specialties {
   padding: 80px 0;
   background: linear-gradient(135deg, #f8f4e6 0%, #fff8dc 100%);
@@ -145,7 +139,7 @@ onMounted(() => {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="%23daa520" opacity="0.1"/></svg>') repeat;
+  background-image: radial-gradient(circle, rgba(218, 165, 32, 0.12) 2px, transparent 2.2px);
   background-size: 50px 50px;
   pointer-events: none;
 }
@@ -188,10 +182,14 @@ onMounted(() => {
   transform: translateY(30px);
 }
 
-.specialty-card.animate-in {
+.is-mounted .specialty-card {
   opacity: 1;
   transform: translateY(0);
 }
+
+.is-mounted .specialty-card:nth-child(1) { transition-delay: 0.05s; }
+.is-mounted .specialty-card:nth-child(2) { transition-delay: 0.25s; }
+.is-mounted .specialty-card:nth-child(3) { transition-delay: 0.45s; }
 
 .specialty-card:hover {
   transform: translateY(-10px);

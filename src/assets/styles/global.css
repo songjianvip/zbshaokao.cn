@@ -10,7 +10,6 @@
 
 /* 基础样式 */
 html {
-  scroll-behavior: smooth;
   font-size: 16px;
 }
 
@@ -20,6 +19,8 @@ body {
   color: var(--text-primary);
   background-color: var(--bg-primary);
   min-height: 100vh;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* 容器样式 */
@@ -50,6 +51,8 @@ a:hover {
 /* 按钮样式 */
 .btn {
   display: inline-block;
+  position: relative;
+  overflow: hidden;
   padding: var(--spacing-sm) var(--spacing-lg);
   background: var(--gradient-primary);
   color: var(--text-white);
@@ -147,6 +150,17 @@ ul, ol {
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
 }
 
 /* 工具类 */
