@@ -92,6 +92,11 @@ type NewsItem = {
 
 const newsItems = ref<NewsItem[]>([
   {
+    time: '2026-03-30',
+    title: '媒体大V齐聚淄博张店共探文旅融合新“淄”味',
+    url: 'https://news.iqilu.com/shandong/shandonggedi/20260330/5902320.shtml'
+  },
+  {
     time: '2026-03-27',
     title: '淄博烧烤“退烧”之后：没有凉，只是回到日常',
     url: 'https://baijiahao.baidu.com/s?id=1860825246393309930'
