@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/lvyou/92",
+      "destination": "https://www.zbshaokao.cn/",
+      "statusCode": 301
+    },
+    {
+      "source": "$host",
+      "destination": "$wwwhost",
+      "statusCode": 301
+    }
+  ]
+}
