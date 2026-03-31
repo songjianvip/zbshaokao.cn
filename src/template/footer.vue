@@ -25,19 +25,25 @@
   </footer>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { onMounted } from 'vue'
 
-// 百度统计代码
+defineOptions({
+  name: 'AppFooter'
+})
+
 onMounted(() => {
-  // 确保统计代码只执行一次
   if (!window._hmt) {
     window._hmt = window._hmt || [];
     (function() {
       const hm = document.createElement("script");
       hm.src = "https://hm.baidu.com/hm.js?539b938b181b25c7433faa80d8a1b579";
-      const s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
+      const firstScript = document.getElementsByTagName("script")[0];
+      if (firstScript?.parentNode) {
+        firstScript.parentNode.insertBefore(hm, firstScript);
+        return
+      }
+      document.head.appendChild(hm)
     })();
   }
 })

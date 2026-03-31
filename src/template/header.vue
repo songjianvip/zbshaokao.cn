@@ -12,6 +12,7 @@
       <!-- 导航菜单 -->
       <div class="nav-menu" :class="{ active: isMenuOpen }">
         <router-link to="/" class="nav-link" @click="closeMenu">首页</router-link>
+        <router-link :to="{ path: '/', hash: '#news' }" class="nav-link" @click="closeMenu">新闻</router-link>
         <router-link to="/menu" class="nav-link" @click="closeMenu">菜单</router-link>
         <router-link to="/culture" class="nav-link" @click="closeMenu">文化</router-link>
       </div>
@@ -28,6 +29,10 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
+
+defineOptions({
+  name: 'AppHeader'
+})
 
 const isScrolled = ref<boolean>(false)
 const isMenuOpen = ref<boolean>(false)
