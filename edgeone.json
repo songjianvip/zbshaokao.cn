@@ -1,7 +1,12 @@
 {
   "redirects": [
     {
-      "source": "/lvyou/92",
+      "source": "/resou/*",
+      "destination": "https://www.zbshaokao.cn/",
+      "statusCode": 301
+    },
+    {
+      "source": "/lvyou/*",
       "destination": "https://www.zbshaokao.cn/",
       "statusCode": 301
     },
