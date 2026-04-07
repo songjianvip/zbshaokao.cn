@@ -5,6 +5,7 @@
   --primary-hover: #e55a2b;
   --primary-light: rgba(255, 107, 53, 0.1);
   --primary-light-2: rgba(255, 107, 53, 0.2);
+  --accent-color: #f7931e;
   
   /* 渐变色 */
   --gradient-primary: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
@@ -13,22 +14,27 @@
   /* 文字颜色 */
   --text-primary: #333;
   --text-secondary: #666;
+  --text-muted: rgba(51, 51, 51, 0.65);
   --text-light: rgba(255, 255, 255, 0.8);
   --text-white: #fff;
   
   /* 背景色 */
   --bg-primary: #fff;
   --bg-secondary: #f8f9fa;
+  --bg-elevated: rgba(255, 255, 255, 0.9);
   --bg-dark: #333;
   
   /* 边框和分割线 */
   --border-light: rgba(255, 107, 53, 0.1);
+  --border-medium: rgba(255, 107, 53, 0.18);
   --border-white: rgba(255, 255, 255, 0.1);
   
   /* 阴影 */
   --shadow-light: 0 5px 15px rgba(0, 0, 0, 0.1);
-  --shadow-medium: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --shadow-medium: 0 8px 24px rgba(0, 0, 0, 0.18);
   --shadow-navbar: 0 2px 20px rgba(0, 0, 0, 0.1);
+  --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.1);
+  --shadow-card-hover: 0 20px 60px rgba(0, 0, 0, 0.15);
   
   /* 字体 */
   --font-family: 'Microsoft YaHei', 'Helvetica Neue', Arial, sans-serif;
@@ -77,15 +83,30 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
+  --focus-ring: 0 0 0 3px rgba(255, 107, 53, 0.35);
+  --card-hover-lift: -8px;
 }
 
-/* 深色模式支持（预留） */
 @media (prefers-color-scheme: dark) {
   :root {
-    --text-primary: #f0f0f0;
-    --text-secondary: #ccc;
-    --bg-primary: #1a1a1a;
-    --bg-secondary: #2a2a2a;
+    --primary-color: #ff8a5b;
+    --primary-hover: #ff9a72;
+    --primary-light: rgba(255, 138, 91, 0.18);
+    --primary-light-2: rgba(255, 138, 91, 0.26);
+    --text-primary: #f3f3f3;
+    --text-secondary: #d2d2d2;
+    --text-muted: rgba(243, 243, 243, 0.7);
+    --bg-primary: #121212;
+    --bg-secondary: #1e1e1e;
+    --bg-elevated: rgba(29, 29, 29, 0.86);
     --bg-dark: #000;
+    --border-light: rgba(255, 138, 91, 0.24);
+    --border-medium: rgba(255, 138, 91, 0.38);
+    --shadow-light: 0 5px 20px rgba(0, 0, 0, 0.35);
+    --shadow-medium: 0 8px 28px rgba(0, 0, 0, 0.45);
+    --shadow-navbar: 0 2px 26px rgba(0, 0, 0, 0.45);
+    --shadow-card: 0 12px 40px rgba(0, 0, 0, 0.42);
+    --shadow-card-hover: 0 20px 68px rgba(0, 0, 0, 0.5);
+    --focus-ring: 0 0 0 3px rgba(255, 138, 91, 0.5);
   }
 }

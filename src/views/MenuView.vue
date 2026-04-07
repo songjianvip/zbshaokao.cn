@@ -15,6 +15,24 @@
         </button>
       </div>
 
+      <div class="menu-tools">
+        <input
+          v-model.trim="searchKeyword"
+          class="menu-search"
+          type="search"
+          placeholder="搜索菜名或描述"
+          aria-label="搜索菜品"
+        >
+        <select v-model="sortBy" class="menu-select" aria-label="排序方式">
+          <option value="default">默认排序</option>
+          <option value="name">按名称</option>
+        </select>
+        <select v-model="activeTag" class="menu-select" aria-label="标签筛选">
+          <option value="all">全部标签</option>
+          <option v-for="tag in allTags" :key="tag" :value="tag">{{ tag }}</option>
+        </select>
+      </div>
+
       <div class="menu-grid">
         <div 
           v-for="item in filteredItems" 
@@ -40,6 +58,9 @@ import { ref, computed } from 'vue'
 import type { MenuItem, Category } from '@/types'
 
 const activeCategory = ref<string>('all')
+const searchKeyword = ref<string>('')
+const sortBy = ref<'default' | 'name'>('default')
+const activeTag = ref<string>('all')
 
 const categories: Category[] = [
   { id: 'all', name: '全部' },
@@ -116,11 +137,32 @@ const menuItems: MenuItem[] = [
   }
 ]
 
+const allTags = computed<string[]>(() => {
+  return Array.from(new Set(menuItems.flatMap((item) => item.tags)))
+})
+
 const filteredItems = computed<MenuItem[]>(() => {
-  if (activeCategory.value === 'all') {
-    return menuItems
+  const keyword = searchKeyword.value.toLowerCase()
+  const byCategory = activeCategory.value === 'all'
+    ? menuItems
+    : menuItems.filter((item) => item.category === activeCategory.value)
+
+  const byTag = activeTag.value === 'all'
+    ? byCategory
+    : byCategory.filter((item) => item.tags.includes(activeTag.value))
+
+  const byKeyword = keyword
+    ? byTag.filter((item) =>
+        item.name.toLowerCase().includes(keyword) ||
+        item.description.toLowerCase().includes(keyword) ||
+        item.tags.some((tag) => tag.toLowerCase().includes(keyword))
+      )
+    : byTag
+
+  if (sortBy.value === 'name') {
+    return [...byKeyword].sort((a, b) => a.name.localeCompare(b.name, 'zh-Hans-CN'))
   }
-  return menuItems.filter(item => item.category === activeCategory.value)
+  return byKeyword
 })
 </script>
 

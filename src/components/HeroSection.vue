@@ -8,7 +8,7 @@
     <div class="hero-container">
       <div class="hero-content">
         <div class="hero-badge">
-          <span class="badge-icon">🔥</span>
+          <span class="badge-icon" aria-hidden="true">🔥</span>
           <span class="badge-text">正宗淄博味道</span>
         </div>
         
@@ -40,11 +40,11 @@
         <div class="hero-actions">
           <button class="btn btn-primary" @click="navigateToMenu">
             <span class="btn-text">立即品尝</span>
-            <span class="btn-icon">🍢</span>
+            <span class="btn-icon" aria-hidden="true">🍢</span>
           </button>
           <button class="btn btn-secondary" @click="navigateToCulture">
             <span class="btn-text">文化故事</span>
-            <span class="btn-icon">📖</span>
+            <span class="btn-icon" aria-hidden="true">📖</span>
           </button>
         </div>
       </div>
@@ -52,12 +52,12 @@
       <div class="hero-visual">
         <div class="visual-main">
           <div class="bbq-scene">
-            <div class="bbq-grill">🔥</div>
+            <div class="bbq-grill" aria-hidden="true">🔥</div>
             <div class="bbq-smoke"></div>
             <div class="bbq-items">
-              <span class="bbq-item">🍢</span>
-              <span class="bbq-item">🥩</span>
-              <span class="bbq-item">🌶️</span>
+              <span class="bbq-item" aria-hidden="true">🍢</span>
+              <span class="bbq-item" aria-hidden="true">🥩</span>
+              <span class="bbq-item" aria-hidden="true">🌶️</span>
             </div>
           </div>
         </div>
@@ -71,7 +71,7 @@
     </div>
     
     <div class="hero-scroll-indicator">
-      <div class="scroll-arrow">↓</div>
+      <div class="scroll-arrow" aria-hidden="true">↓</div>
       <span class="scroll-text">探索更多</span>
     </div>
   </section>

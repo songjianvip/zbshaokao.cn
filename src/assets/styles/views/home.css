@@ -54,11 +54,11 @@
 
 .news-ticker {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto auto 1fr;
   align-items: center;
   gap: 1rem;
-  background: rgba(255, 255, 255, 0.75);
-  border: 1px solid rgba(255, 107, 53, 0.12);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-light);
   border-radius: 18px;
   padding: 0.9rem 1rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
@@ -77,6 +77,16 @@
   letter-spacing: 0.12em;
 }
 
+.ticker-toggle {
+  border: 1px solid var(--border-medium);
+  background: transparent;
+  color: var(--primary-color);
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+  min-height: 36px;
+}
+
 .ticker-track {
   overflow: hidden;
   white-space: nowrap;
@@ -90,6 +100,19 @@
   animation: newsMarquee 22s linear infinite;
 }
 
+.ticker-items.paused {
+  animation-play-state: paused;
+}
+
+.ticker-items.static {
+  animation: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  white-space: normal;
+  gap: 0.6rem;
+}
+
 .news-ticker:hover .ticker-items {
   animation-play-state: paused;
 }
@@ -98,7 +121,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: #444;
+  color: var(--text-primary);
   font-weight: 600;
   text-decoration: none;
 }
@@ -108,7 +131,7 @@
 }
 
 .ticker-empty {
-  color: rgba(51, 51, 51, 0.65);
+  color: var(--text-muted);
   font-weight: 700;
   padding: 0.25rem 0;
 }
@@ -155,9 +178,20 @@
 }
 
 .news-date {
-  color: rgba(51, 51, 51, 0.65);
+  color: var(--text-muted);
   font-weight: 600;
   font-size: 0.95rem;
+}
+
+.news-source {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.45rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
 }
 
 .news-external {
@@ -169,15 +203,15 @@
   font-weight: 800;
   font-size: 0.8rem;
   letter-spacing: 0.08em;
-  color: #ff4500;
-  background: rgba(255, 69, 0, 0.1);
-  border: 1px solid rgba(255, 69, 0, 0.18);
+  color: var(--primary-color);
+  background: var(--primary-light);
+  border: 1px solid var(--border-medium);
 }
 
 .news-card-title {
   font-size: 1.3rem;
   line-height: 1.25;
-  color: #222;
+  color: var(--text-primary);
   margin-bottom: 0.2rem;
 }
 
@@ -205,11 +239,11 @@
   }
 
   .news-ticker {
-    grid-template-columns: 1fr;
+    grid-template-columns: auto 1fr;
     gap: 0.75rem;
   }
 
-  .ticker-items {
-    animation-duration: 26s;
+  .ticker-toggle {
+    justify-self: end;
   }
 }

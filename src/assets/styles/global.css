@@ -11,6 +11,7 @@
 /* 基础样式 */
 html {
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -21,6 +22,11 @@ body {
   min-height: 100vh;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
+  text-rendering: optimizeLegibility;
+}
+
+body.menu-open {
+  overflow: hidden;
 }
 
 /* 容器样式 */
@@ -46,6 +52,12 @@ a {
 
 a:hover {
   color: var(--primary-color);
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: var(--border-radius-md);
 }
 
 /* 按钮样式 */
@@ -93,8 +105,9 @@ img {
 /* 标题样式 */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.3;
   margin-bottom: var(--spacing-sm);
+  letter-spacing: 0.01em;
 }
 
 h1 {
@@ -115,6 +128,8 @@ h4 {
 
 /* 段落样式 */
 p {
+  color: var(--text-secondary);
+  line-height: 1.75;
   margin-bottom: var(--spacing-sm);
 }
 

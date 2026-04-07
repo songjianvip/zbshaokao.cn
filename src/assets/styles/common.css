@@ -89,10 +89,10 @@
 
 /* 通用卡片样式 */
 .card {
-  background: white;
+  background: var(--bg-primary);
   border-radius: 20px;
   padding: 2.5rem;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  box-shadow: var(--shadow-card);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -105,14 +105,14 @@
   left: 0;
   width: 100%;
   height: 4px;
-  background: linear-gradient(135deg, #ff4500, #ff6b35);
+  background: var(--gradient-primary);
   transform: scaleX(0);
   transition: transform 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+  transform: translateY(var(--card-hover-lift));
+  box-shadow: var(--shadow-card-hover);
 }
 
 .card:hover::before {
@@ -250,6 +250,8 @@
   }
   
   .btn {
+  min-height: 44px;
+  min-width: 44px;
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
   }
